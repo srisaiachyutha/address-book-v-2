@@ -1,0 +1,3 @@
+<app-contact (click)="onSelect($event , i)" *ngFor="let contact of contacts;index as i" [contact]="contact" [index]="i"
+    routerLink="/contact/:i">
+</app-contact>

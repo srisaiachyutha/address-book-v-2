@@ -1,0 +1,87 @@
+<div class="border p-4 shadow " id="form-container">
+    <form class="w-630px" [formGroup]="contactForm">
+        <div class="w-520px">
+            <div class="form-group">
+                <label for="contact-name">Name</label>
+                <input type="text" formControlName="userName" class="form-control" id="userName" placeholder=""
+                    required>
+                <div *ngIf="contactForm.get('userName').invalid && (contactForm.get('userName').dirty || contactForm.get('userName').touched)"
+                    class="alert alert-danger">
+                    <small *ngIf="contactForm.get('userName').errors.required">
+                        Name is required
+                    </small>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="contact-email-id">Email address</label>
+                <input required type="email" formControlName="email" class="form-control" id="contact-email-id"
+                    placeholder="name@example.com">
+                <div *ngIf="contactForm.get('email').invalid && (contactForm.get('email').dirty || contactForm.get('email').touched)"
+                    class="alert alert-danger">
+                    <small *ngIf="contactForm.get('email').errors.required">
+                        Email is required
+                    </small>
+                    <small *ngIf="contactForm.get('email').errors.pattern">
+                        Email is not valid one
+                    </small>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="mobile-number">Mobile</label>
+                    <input required type="text" formControlName="mobile" class="form-control" id="mobile-number">
+
+                    <div *ngIf="contactForm.get('mobile').invalid && (contactForm.get('mobile').dirty || contactForm.get('mobile').touched)"
+                        class="alert alert-danger">
+                        <small *ngIf="contactForm.get('mobile').errors.required">
+                            Mobile number is required
+                        </small>
+                        <small *ngIf="contactForm.get('mobile').errors.minlength">
+                            Mobile number is not valid one
+                        </small>
+                    </div>
+
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="landline-number">Landline</label>
+                    <input required type="tel" formControlName="landLine" class="form-control" id="landline-number">
+                    <div *ngIf="contactForm.get('landLine').invalid && (contactForm.get('landLine').dirty || contactForm.get('landLine').touched)"
+                        class="alert alert-danger">
+                        <small *ngIf="contactForm.get('landLine').errors.required">
+                            Landline number is required
+                        </small>
+
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="website-address">Website</label>
+                <input required type="text" formControlName="website" class="form-control" id="website-address">
+                <div *ngIf="contactForm.get('website').invalid && (contactForm.get('website').dirty || contactForm.get('website').touched)"
+                    class="alert alert-danger">
+                    <small *ngIf="contactForm.get('website').errors.required">
+                        Website is required
+                    </small>
+
+                </div>
+
+            </div>
+            <div class="form-group">
+                <label for="house-address">Address</label>
+                <textarea required class="form-control" formControlName="houseAdd" id="house-address"
+                    rows="3"></textarea>
+                <div *ngIf="contactForm.get('houseAdd').invalid && (contactForm.get('houseAdd').dirty || contactForm.get('houseAdd').touched)"
+                    class="alert alert-danger">
+                    <small *ngIf="contactForm.get('houseAdd').errors.required">
+                        Landline number is required
+                    </small>
+
+                </div>
+
+            </div>
+        </div>
+        <button (click)="addOrUpdate()" type="button" [disabled]="!contactForm.valid"
+            class="btn align-items-center btn-success justify-content-center d-flex  float-right">Add</button>
+    </form>
+</div>

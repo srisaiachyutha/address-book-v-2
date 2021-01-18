@@ -1,0 +1,29 @@
+<div class="row">
+    <div class=" mx-4 mw- px-3 " id="selected-contact-details">
+        <p class="fs-30 font-weight-bold text-capitalize ">{{selectedContact.userName}}</p>
+        <p>Email: {{ selectedContact.emailId}}</p>
+        <p> Mobile:+91 {{ selectedContact.mobileNumber}} </p>
+        <p> Landline: {{selectedContact.landlineNumber}} </p>
+
+        <p>Website: {{selectedContact.websiteAddress}}</p>
+        <p class="d-flex">Address:
+            <span>
+                {{selectedContact.houseAddress}}
+            </span>
+        </p>
+
+    </div>
+
+    <div class=" row mx-3 ">
+        <!-- add d-flex to the above div elment TODO -->
+        <span class="mx-3">
+            <img (click)="editContact()" src="../../assets/Edit-icon.png" alt="edit pic" height="20px" width="20px">
+            <span (click)="editContact()">EDIT</span>
+        </span>
+        <span class="mx-3">
+            <img (click)="deleteContact()" src="../../assets/delete2.png" alt="delete pic" height="30px" width="25px">
+            <span (click)="deleteContact()">DELETE</span>
+        </span>
+    </div>
+
+</div>
