@@ -9,7 +9,6 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
 import { ContactListComponent } from './contact-list/contact-list.component';
 import { ContactComponent } from './contact/contact.component';
 import { DetailContactComponent } from './detail-contact/detail-contact.component';
-//import { ContainerComponent } from './container/container.component';
 
 @NgModule({
   declarations: [

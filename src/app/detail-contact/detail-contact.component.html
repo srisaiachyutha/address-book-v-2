@@ -4,18 +4,15 @@
         <p>Email: {{ selectedContact.emailId}}</p>
         <p> Mobile:+91 {{ selectedContact.mobileNumber}} </p>
         <p> Landline: {{selectedContact.landlineNumber}} </p>
-
         <p>Website: {{selectedContact.websiteAddress}}</p>
         <p class="d-flex">Address:
             <span>
                 {{selectedContact.houseAddress}}
             </span>
         </p>
-
     </div>
 
     <div class=" row mx-3 ">
-        <!-- add d-flex to the above div elment TODO -->
         <span class="mx-3">
             <img (click)="editContact()" src="../../assets/Edit-icon.png" alt="edit pic" height="20px" width="20px">
             <span (click)="editContact()">EDIT</span>
